@@ -41,7 +41,7 @@ const initializeSeats = async () => {
 };
 
 // Uncomment this line and run the server once to initialize seats
-//initializeSeats();
+initializeSeats();
 
 // Get all seats
 app.get("/api/seats", async (req, res) => {
@@ -62,19 +62,7 @@ app.post("/api/book", async (req, res) => {
   if (availableSeats.length < seatCount) {
     return res.status(400).json({ error: "Not enough available seats" });
   }
-app.put("/api/seats/reset", async (req, res) => {
-  try {
-    // Update all seats to set 'booked' to false
-    const result = await Seat.updateMany({}, { $set: { booked: false } });
-    
-    res.json({
-      message: "All seats have been reset to available",
-      updatedSeatsCount: result.nModified,
-    });
-  } catch (error) {
-    res.status(500).json({ message: "Error resetting seats", error });
-  }
-});
+
 
   // Book the seats
   const bookedSeats = await Seat.updateMany(
