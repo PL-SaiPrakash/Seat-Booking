@@ -40,7 +40,7 @@ const initializeSeats = async () => {
   await Seat.insertMany(seats);
 };
 
-// Uncomment this line and run the server once to initialize seats
+// Uncomment this line and run the server once to initialize seats.
 initializeSeats();
 
 // Get all seats
