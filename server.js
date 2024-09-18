@@ -41,7 +41,7 @@ const initializeSeats = async () => {
 };
 
 // Uncomment this line and run the server once to initialize seats.
-initializeSeats();
+//initializeSeats();
 
 // Get all seats
 app.get("/api/seats", async (req, res) => {
